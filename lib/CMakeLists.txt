@@ -47,7 +47,7 @@ endif( OPENCL_FOUND )
 # Set include directories
 include_directories( ${LIBBOULETTE_SOURCE_DIR}/include )
 
-file ( GLOB_RECURSE BOULETTE_CPP ./src/*.cpp )
+file ( GLOB_RECURSE BOULETTE_CPP ./src/*.cc )
 
 set( ALL_CPP ${BOULETTE_CPP} )
 
