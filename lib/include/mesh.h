@@ -1,19 +1,29 @@
 #pragma once
 
+// Internal
 #include "shape.h"
+
+// STL
+#include <memory>
 
 class Mesh : public Shape
 {
+	typedef struct
+	{
+		std::vector< unsigned int > _vertexIdx;
+		std::vector< unsigned int > _normalIdx;
+	} Face;
+
 	public:
 		Mesh(){}
 		virtual ~Mesh(){}
-		std::vector< Shape > tesselate()
+		virtual std::vector< std::shared_ptr<Mesh> > tesselate()
 		{
-			std::vector< Shape > res;
+			std::vector< std::shared_ptr<Mesh> > res;
 			return res;
 		}
 
 	private:
 
 	protected:
-}
+};

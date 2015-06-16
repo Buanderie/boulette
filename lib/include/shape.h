@@ -1,5 +1,10 @@
 #pragma once
 
+// STL
+#include <memory>
+#include <vector>
+
+class Mesh;
 class Shape
 {
 	public:
@@ -7,7 +12,11 @@ class Shape
 		virtual ~Shape();
 		
 		// Shall be abstract
-		std::vector< Shape > tesselate();
+		virtual std::vector< std::shared_ptr<Mesh> > tesselate()
+		{
+			std::vector< std::shared_ptr<Mesh> > res;
+			return res;
+		}
 		
 	private:
 		
