@@ -3,6 +3,9 @@
 // Internal
 #include "shape.h"
 
+// GLM
+#include <glm/glm.hpp>
+
 // STL
 #include <memory>
 
@@ -24,6 +27,9 @@ class Mesh : public Shape
 		}
 
 	private:
+		std::vector< Face > 		_faces;
+		std::vector< glm::vec3 >	_verts;
+		std::vector< glm::vec3 > 	_norms;
 
 	protected:
 };

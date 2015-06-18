@@ -44,6 +44,12 @@ include_directories( ${OPENCL_INCLUDE_DIRS} )
 set( DEPS "${DEPS};${OPENCL_LIBRARIES}" )
 endif( OPENCL_FOUND )
 
+#Find GLM
+find_package( GLM REQUIRED )
+if( GLM_FOUND )
+include_directories( ${GLM_INCLUDE_DIRS} )
+endif()
+
 # Set include directories
 include_directories( ${LIBBOULETTE_SOURCE_DIR}/include )
 
