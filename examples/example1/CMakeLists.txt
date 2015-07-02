@@ -10,5 +10,18 @@ set( DEPS "${DEPS};${OPENCL_LIBRARIES}" )
 message("PITAING")
 endif( OPENCL_FOUND )
 
-add_executable( example1 main.cc )
-target_link_libraries( example1 boulette ${OPENCL_LIBRARIES} )
+#Find OpenGL
+find_package( OpenGL REQUIRED )
+if( OPENGL_FOUND )
+message("Found OpenGL : ${OPENGL_LIBRARIES}")
+set( DEPS "${DEPS};${OPENGL_LIBRARIES}" )
+endif()
+
+#Find GLEW
+find_package( GLEW REQUIRED )
+if( GLEW_FOUND )
+message( "Found GLEW" )
+endif()
+
+add_executable( example1 main.cc camera.cc )
+target_link_libraries( example1 boulette ${DEPS} GL GLU glut GLEW )

@@ -5,3 +5,4 @@
 #include "bvh.h"
 #include "sphere.h"
 
+#include "rtrimesh.h"

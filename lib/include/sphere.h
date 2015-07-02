@@ -9,7 +9,7 @@ class Sphere : public Shape
 	public:
 		Sphere(){}
 		virtual ~Sphere(){}
-		virtual std::vector< std::shared_ptr<Mesh> >  tesselate()
+                virtual std::vector< std::shared_ptr<Mesh> > tesselate()
 		{
 			std::vector< std::shared_ptr<Mesh> > res;
 			return res;	

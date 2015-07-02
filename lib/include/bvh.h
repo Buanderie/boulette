@@ -15,7 +15,9 @@ class BVH
 	public:
 		BVH( std::vector< std::shared_ptr<Mesh> > meshes )
 		:_meshes(meshes)
-		{}
+                {
+                    init();
+                }
 
 		virtual ~BVH()
 		{

@@ -11,13 +11,14 @@
 
 class Mesh : public Shape
 {
-	typedef struct
-	{
-		std::vector< unsigned int > _vertexIdx;
-		std::vector< unsigned int > _normalIdx;
-	} Face;
-
 	public:
+
+                typedef struct
+                {
+                        std::vector< unsigned int > _vertexIdx;
+                        std::vector< unsigned int > _normalIdx;
+                } Face;
+
 		Mesh(){}
 		virtual ~Mesh(){}
 		virtual std::vector< std::shared_ptr<Mesh> > tesselate()
@@ -27,9 +28,9 @@ class Mesh : public Shape
 		}
 
 	private:
-		std::vector< Face > 		_faces;
-		std::vector< glm::vec3 >	_verts;
-		std::vector< glm::vec3 > 	_norms;
 
 	protected:
+                std::vector< Face > 		_faces;
+                std::vector< glm::vec3 >	_verts;
+                std::vector< glm::vec3 > 	_norms;
 };
